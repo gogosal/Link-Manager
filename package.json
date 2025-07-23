@@ -1,0 +1,37 @@
+{
+    "name": "cyberpunk-link-manager",
+    "version": "2.0.0",
+    "description": "A futuristic, cyberpunk-themed link management application",
+    "main": "index.html",
+    "scripts": {
+        "start": "Open index.html in your browser",
+        "dev": "Use Live Server extension in VS Code for development"
+    },
+    "keywords": [
+        "link-manager",
+        "cyberpunk",
+        "bookmarks",
+        "drag-drop",
+        "javascript",
+        "html5",
+        "css3"
+    ],
+    "author": "Cyberpunk Link Manager Team",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gogosal/link-manager.git"
+    },
+    "bugs": {
+        "url": "https://github.com/gogosal/link-manager/issues"
+    },
+    "homepage": "https://github.com/gogosal/link-manager#readme",
+    "dependencies": {},
+    "devDependencies": {},
+    "browserslist": [
+        "Chrome >= 60",
+        "Firefox >= 55",
+        "Safari >= 12",
+        "Edge >= 79"
+    ]
+}

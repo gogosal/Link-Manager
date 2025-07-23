@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBERPUNK LINK MANAGER</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/modals.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <body>
+        <div class="container">
+            <!-- Header -->
+            <header class="header">
+                <h1>◢ LINK MANAGER ◣</h1>
+                <button class="add-btn">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </header>
+
+            <!-- Navigation Sections (Sidebar) -->
+            <nav class="sidebar">
+                <h3>◆ SECTORS ◆</h3>
+                <div class="sections-container">
+                    <!-- Sections will be loaded here by JavaScript -->
+                </div>
+                <div class="section-buttons">
+                    <button id="addSectionBtn" class="add-section-btn">
+                        <i class="fas fa-plus"></i> NEW SECTOR
+                    </button>
+                    <button id="deleteSectionBtn" class="delete-section-btn">
+                        <i class="fas fa-trash"></i> DELETE SECTOR
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <div class="cards-grid">
+                    <!-- Cards will be loaded here by JavaScript -->
+                </div>
+            </main>
+        </div>
+
+        <!-- Modal para adicionar link -->
+        <div id="addModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>◢ NEW CONNECTION ◣</h2>
+                <form id="linkForm" novalidate>
+                    <div class="form-group">
+                        <label for="linkTitle">DESIGNATION:</label>
+                        <input type="text" id="linkTitle" placeholder="Enter connection designation..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="linkUrl">TARGET URL:</label>
+                        <input type="url" id="linkUrl" placeholder="https://target.domain.net" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="linkImage">VISUAL DATA (OPTIONAL):</label>
+                        <input type="file" id="linkImage" accept="image/*">
+                        <small>LEAVE EMPTY FOR AUTO-PREVIEW</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="linkSection">SECTOR:</label>
+                        <select id="linkSection">
+                            <option value="geral">MAIN</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" id="cancelBtn" class="btn secondary">ABORT</button>
+                        <button type="submit" class="btn">ESTABLISH</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal para adicionar secção -->
+        <div id="sectionModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>◢ NEW SECTOR ◣</h2>
+                <form id="sectionForm" novalidate>
+                    <div class="form-group">
+                        <label for="sectionName">SECTOR NAME:</label>
+                        <input type="text" id="sectionName" placeholder="Enter sector designation..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sectionIcon">IDENTIFIER:</label>
+                        <select id="sectionIcon">
+                            <option value="fas fa-folder">📁 DATA</option>
+                            <option value="fas fa-star">⭐ PRIORITY</option>
+                            <option value="fas fa-heart">❤️ PERSONAL</option>
+                            <option value="fas fa-bookmark">🔖 ARCHIVE</option>
+                            <option value="fas fa-tag">🏷️ TAGGED</option>
+                            <option value="fas fa-briefcase">💼 WORK</option>
+                            <option value="fas fa-gamepad">🎮 GAMES</option>
+                            <option value="fas fa-music">🎵 AUDIO</option>
+                            <option value="fas fa-film">🎬 MEDIA</option>
+                            <option value="fas fa-shopping-cart">🛒 COMMERCE</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" id="cancelSectionBtn" class="btn secondary">ABORT</button>
+                        <button type="submit" class="btn">CREATE</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- JavaScript Files -->
+        <script src="js/config.js"></script>
+        <script src="js/utils.js"></script>
+        <script src="js/storage.js"></script>
+        <script src="js/modals.js"></script>
+        <script src="js/forms.js"></script>
+        <script src="js/dragdrop.js"></script>
+        <script src="js/ui.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+
+</html>

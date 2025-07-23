@@ -1,0 +1,118 @@
+/* ====================================
+   BASE STYLES & RESET
+   =======.container {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "sidebar main";
+    grid-template-columns: 320px 1fr;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+    grid-gap: 0 50px;
+}
+
+.header {
+    grid-area: header;
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.main-content {
+    grid-area: main;
+    padding: 20px;
+    overflow-y: auto;
+}==================== */
+
+/* CSS Reset and base configuration */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', 'Consolas', monospace;
+    background: #0a0a0a;
+    background-image:
+        radial-gradient(circle at 25% 25%, #00ffff22 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, #00ff8822 0%, transparent 50%),
+        linear-gradient(45deg, #000000 0%, #001a1a 50%, #000000 100%);
+    min-height: 100vh;
+    color: #00ff88;
+    overflow-x: hidden;
+    position: relative;
+    scrollbar-width: thin;
+    scrollbar-color: #00ff88 rgba(0, 0, 0, 0.3);
+}
+
+/* Global scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    border: 1px solid #00ff88;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #00ff88, #00ffff);
+    border-radius: 5px;
+    border: 1px solid #000;
+    box-shadow:
+        inset 0 0 5px rgba(0, 255, 136, 0.5),
+        0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #00ffff, #00ff88);
+    box-shadow:
+        inset 0 0 8px rgba(0, 255, 255, 0.6),
+        0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+/* Base scanlines effect */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(0deg,
+            transparent,
+            transparent 1px,
+            rgba(0, 255, 136, 0.03) 2px,
+            rgba(0, 255, 136, 0.03) 3px,
+            transparent 3px);
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* Container layout */
+.container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar main";
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto 1fr;
+    min-height: 100vh;
+}
+
+/* Layout positioning */
+.header {
+    grid-area: header;
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.main-content {
+    grid-area: main;
+}

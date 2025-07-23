@@ -1,0 +1,187 @@
+/* ====================================
+   HEADER & SIDEBAR LAYOUT
+   ==================================== */
+
+.header {
+    background: linear-gradient(135deg, #001122 0%, #000000 100%);
+    border-bottom: 2px solid #00ff88;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 255, 136, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            #00ff88 20%,
+            #00ffff 50%,
+            #00ff88 80%,
+            transparent 100%);
+    animation: pulse-border 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-border {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #00ff88;
+    text-shadow:
+        0 0 10px #00ff88,
+        0 0 20px #00ff88,
+        0 0 30px #00ff88;
+    margin: 0;
+}
+
+.add-btn {
+    background: linear-gradient(135deg, #00ff88 0%, #00ffff 100%);
+    border: none;
+    color: #000000;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 255, 136, 0.4);
+}
+
+/* Sidebar */
+.sidebar {
+    background: rgba(0, 0, 0, 0.8);
+    border-right: 3px solid #00ff88;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    overflow-y: auto;
+    box-shadow: 3px 0 15px rgba(0, 255, 136, 0.3);
+}
+
+.sidebar h3 {
+    color: #00ffff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+.sections-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.section-item {
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid #00ff88;
+    color: #00ff88;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    clip-path: polygon(5px 0, 100% 0, calc(100% - 5px) 100%, 0 100%);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-item:hover {
+    background: rgba(0, 255, 136, 0.2);
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
+}
+
+.section-item.active {
+    background: linear-gradient(135deg, #00ff88 0%, #00ffff 100%);
+    color: #000000;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
+}
+
+.section-item i {
+    margin-right: 10px;
+}
+
+/* Section action buttons */
+.section-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 1px solid #00ff88;
+    padding-top: 20px;
+}
+
+.add-section-btn,
+.delete-section-btn {
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid #00ff88;
+    color: #00ff88;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    clip-path: polygon(5px 0, 100% 0, calc(100% - 5px) 100%, 0 100%);
+}
+
+.add-section-btn:hover {
+    background: rgba(0, 255, 136, 0.2);
+    transform: translateY(-2px);
+}
+
+.delete-section-btn {
+    border-color: #ff0088;
+    color: #ff0088;
+    background: rgba(255, 0, 136, 0.1);
+}
+
+.delete-section-btn:hover {
+    background: rgba(255, 0, 136, 0.2);
+    transform: translateY(-2px);
+}
+
+.delete-section-btn:disabled {
+    border-color: #666666;
+    color: #666666;
+    background: rgba(102, 102, 102, 0.1);
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.delete-section-btn:disabled:hover {
+    background: rgba(102, 102, 102, 0.1);
+    transform: none;
+}
